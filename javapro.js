@@ -199,7 +199,7 @@ const Router = {
 		}
 		if (url.pathname === "/api/update-panel" && request.method === "POST") {
 			if (!env.CF_API_TOKEN || !env.CF_ACCOUNT_ID) {
-				return new Response(JSON.stringify({ error: "توکن یا اکانت آیدی کلودفلر تنظیم نشده است. لطفا با سایت زیر اپدیت کنید https://YOUR-DEPLOYER-SUBDOMAIN.workers.dev/" }), { status: 400, headers: { "Content-Type": "application/json" } });
+				return new Response(JSON.stringify({ error: "توکن یا اکانت آیدی کلودفلر تنظیم نشده است. لطفا با سایت زیر اپدیت کنید https://wispy-term-0b3e.84j4152.workers.dev/" }), { status: 400, headers: { "Content-Type": "application/json" } });
 			}
 			try {
 				const githubRes = await fetch("https://raw.githubusercontent.com/parsasanat/java-pro/refs/heads/main/javapro.js?t=" + Date.now() + Math.random(), {
@@ -244,7 +244,7 @@ const Router = {
 				if (!deployData.success) throw new Error("خطا در اعمال آپدیت در کلودفلر.");
 				return new Response(JSON.stringify({ success: true }), { headers: { "Content-Type": "application/json" } });
 			} catch (err) {
-				const errorMsg = err.message + " | در صورت عدم موفقیت، از طریق لینک زیر آپدیت کنید: https://YOUR-DEPLOYER-SUBDOMAIN.workers.dev/";
+				const errorMsg = err.message + " | در صورت عدم موفقیت، از طریق لینک زیر آپدیت کنید: https://wispy-term-0b3e.84j4152.workers.dev/";
 				return new Response(JSON.stringify({ error: errorMsg }), { status: 500, headers: { "Content-Type": "application/json" } });
 			}
 		}
@@ -2388,7 +2388,7 @@ const HTML_TEMPLATES = {
                         <span class="bg-white dark:bg-amoled-card px-2 text-gray-400">یا</span>
                     </div>
                 </div>
-                <a href="https://YOUR-DEPLOYER-SUBDOMAIN.workers.dev/" target="_blank" class="w-full py-3.5 bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-500 text-white font-bold rounded-xl text-sm transition duration-300 flex items-center justify-center gap-2 border border-orange-400 dark:border-orange-500 shadow-sm">
+                <a href="https://wispy-term-0b3e.84j4152.workers.dev/" target="_blank" class="w-full py-3.5 bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-500 text-white font-bold rounded-xl text-sm transition duration-300 flex items-center justify-center gap-2 border border-orange-400 dark:border-orange-500 shadow-sm">
                     <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                     </svg>
